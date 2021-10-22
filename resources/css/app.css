@@ -1,0 +1,12 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './tooglebutton.css';
+
+textarea{
+    resize: none!important;
+}
+
+#category_content{
+    display: none;
+}
