@@ -33,6 +33,7 @@ Route::post('/code', [AccountController::class, 'storeAccount'])->middleware('au
 Route::resource('/restaurant', RestaurantController::class)->middleware(['auth','acount']);
 Route::resource('/category', CategoryController::class)->middleware(['auth','acount']);
 Route::resource('/product', ProductController::class)->middleware(['auth','acount']);
+Route::post('/product/changeAvailable/{productId}',[ProductController::class,'changeAvailable']);
 Route::get('/my_restaurant', [RestaurantController::class,'myRestaurant'])->middleware(['auth','acount']);
 Route::get('/carta/{name}', [RestaurantController::class,'restaurant']);
 Route::get('/my_codeqr', [QrController::class,'index'])->middleware(['auth','acount']);

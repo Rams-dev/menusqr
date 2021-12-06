@@ -7,7 +7,6 @@
 
     <div class="py-3">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-            
             @foreach($products as $product)
             @include('components.productsList')
             @endforeach

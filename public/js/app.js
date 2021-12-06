@@ -4026,6 +4026,8 @@ Turbolinks.start();
 
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
+__webpack_require__(/*! ./domIterations */ "./resources/js/domIterations.js");
+
 __webpack_require__(/*! ./category */ "./resources/js/category.js");
 
 __webpack_require__(/*! ./products */ "./resources/js/products.js");
@@ -4074,6 +4076,20 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // $btncategory.addEventListener('click',()=>{
 //     $categoryContent.style.display = "block";
 // })
+
+/***/ }),
+
+/***/ "./resources/js/domIterations.js":
+/*!***************************************!*\
+  !*** ./resources/js/domIterations.js ***!
+  \***************************************/
+/***/ (() => {
+
+var navbuttom = document.querySelector('.navButton');
+var contentMenu = document.querySelector('.content-menu');
+navbuttom.addEventListener('click', function () {
+  contentMenu.classList.toggle('hidden');
+});
 
 /***/ }),
 
