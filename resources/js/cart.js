@@ -50,7 +50,5 @@ cartForm.forEach(element => {
                 getNameAndTable()
             }
         })    
-
     })
-    
 });

@@ -18,24 +18,15 @@
             <p class=" ">{{$product->description}}</p>
         </div>
         <div class="flex align-center justify-end p-2"> 
-            @if($product->available) 
-            <p class="text-sm text-green-500 mr-2">Disponible</p>
-            @else
-            <p class="text-sm text-red-500 mr-2">No disponible</p>
-            @endif
-
-            @if($product->available) 
-            <label class="switch p-2">
-                <input type="checkbox" name="available" id="{{$product->id}}" checked class="tooglebtn">
-                  <span class="slider round"></span>
-              </label>
-            @else
-            <label class="switch p-2">
-                <input type="checkbox" name="available" id="{{$product->id}}" class="tooglebtn">
-                  <span class="slider round"></span>
-              </label>
-            @endif
+            <form action="{{url('/product/changeAvailable/'.$product->id)}}" method="post">
+                @csrf
+                @if($product->available)
+                    <button class="text-xs px-4 py-2 rounded bg-green-500 hover:bg-green-700 hover:cursor-pointer text-white"><span>Disponible </span></button>                       
+                @else
+                    <button class="text-xs px-4 py-2 rounded bg-red-500 hover:bg-red-700 hover:cursor-pointer text-white"><span>No disponible</span></button>                       
+                @endif
+            </form>
             
-            </div>
+        </div>
     </a>
 </div>

@@ -140,6 +140,13 @@ class ProductController extends Controller
         return redirect('/product')->with('success','1 producto eliminado');
     }
 
+    public function changeAvailable($productId){
+        $product = $this->ProductRepository->get($productId);
+        $t = $this->ProductRepository->update($productId, ['available' => $product['available'] ? false : true ]);
+        return redirect()->back();
+
+    }
+
     public function attrbibutes($type = ""){
         if($type != ""){
             return [
